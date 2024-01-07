@@ -121,6 +121,7 @@ class PowerUp {
 ```
 
 ## Creating Ghosts
+Here we create a list of new Ghost Objects with their respective positions on the board and an initial velocity.
 ```
 const ghosts = [
     new Ghost({
@@ -170,6 +171,7 @@ const ghosts = [
 ```
 
 ## Creating PacMan
+Similar to the Ghosts we create a PacMan Object with its respective position on the board and its initial velocity of 0 in both directions.
 ```
 const pacman = new Pacman({
     position: {
@@ -185,6 +187,7 @@ const pacman = new Pacman({
 
 
 ## Detecting Collisions
+Here the code uses the position of a ghosts/pacman then we add or subtract the radius of the circle so we can see if the border of the circle hits one the boundaries. It also takes into consideration the velocity of the ghost/pacman and adds some padding so that they all stop just before the boundaries and thus are not just hugging the boundary the whole time.
 ```
 function isCollision({circle,rect}){
     const padding = Boundary.width/2 - circle.radius - 1
@@ -200,6 +203,7 @@ function isCollision({circle,rect}){
 ```
 
 ## Defining and Creating Maze
+A array of arrays is used in order to define the Maze such that each subarray in the array corresponds to a row of the gameboard.
 ```
 const map = [
     ['1', '-', '-', '-', '-', '-', '-', '-', '-', '-', '2'],
@@ -217,6 +221,7 @@ const map = [
     ['4', '-', '-', '-', '-', '-', '-', '-', '-', '-', '3']
   ]
 ```
+Here w
 
 ```
 map.forEach((row,i) => {
