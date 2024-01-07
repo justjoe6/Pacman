@@ -224,7 +224,10 @@ const map = [
     ['4', '-', '-', '-', '-', '-', '-', '-', '-', '-', '3']
   ]
 ```
-Here w
+
+### Displaying Maze
+
+Here I loop through each subarray and then each element of each subarray and then display an image on the canvas corresponding to the symbol stored in the array. For example, in the case that the symbol '-' is stored then a horizional pipe will be displayed at the corresponding position(Decided by the index of the subarray * Boundary.width and the index of the array * Boundary.height).
 
 ```
 map.forEach((row,i) => {
