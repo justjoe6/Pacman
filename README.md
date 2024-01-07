@@ -369,4 +369,73 @@ map.forEach((row,i) => {
 })
 ```
 
+## Animation Function
 
+### PacMan Movement & Boundary Collision Detection
+```
+    if(keys.w.pressed && lastKey =='w')
+    {
+        for(let i = 0; i < boundaries.length; i++)
+        {            
+            const boundary = boundaries[i]    
+            if(isCollision({circle:{...pacman, velocity:{
+                x:0,
+                y:-5
+            }},rect:boundary})){
+                pacman.velocity.y=0
+                break
+            }
+            else {
+                pacman.velocity.y=-5
+            }
+        }
+    }
+```
+
+### Implementing PacMan PowerUps
+```
+    for(let i = powerUps.length-1; i>=0;i--)
+    {
+        const powerUp = powerUps[i]
+        powerUp.draw()
+        if(Math.hypot(powerUp.position.x-pacman.position.x,
+            powerUp.position.y-pacman.position.y) < powerUp.radius + pacman.radius)
+            {
+                powerUps.splice(i,1)
+
+                ghosts.forEach(ghost => {
+                    ghost.scared = true
+
+                    setTimeout(() => {
+                        ghost.scared = false
+                    },3000)
+                })
+            }
+    }
+```
+
+### Displaying & Implementing Pellet Mechanics
+```
+    for(let i = pellets.length-1; i>=0;i--)
+    {
+        const pellet = pellets[i]
+        pellet.draw()
+        if(Math.hypot(pellet.position.x-pacman.position.x,
+            pellet.position.y-pacman.position.y) < pellet.radius + pacman.radius)
+            {
+                pellets.splice(i,1)
+                score+=10
+                scoreEl.innerHTML = 'Score: ' + score.toString()
+            }
+
+    }
+```
+
+## Win Condtiion
+```
+    if(pellets.length==0)
+    {
+        cancelAnimationFrame(animationId)
+        scoreEl.innerHTML='you won'
+    }
+```
