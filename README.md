@@ -545,6 +545,9 @@ If a ghost collides with PacMan then the code checks first if the ghost is scare
 ```
 
 ## Win Condtiion
+<img width="917" alt="Screenshot 2024-01-07 121450" src="https://github.com/justjoe6/Pacman/assets/68125991/c7fa2cfe-f2f1-4480-b360-b6c92cc5e1da">
+
+
 If the pellets list is empty or in other words all pellets have been removed from the board then the animation ends and a you won text is displayed on the browser.
 ```
     if(pellets.length==0)
