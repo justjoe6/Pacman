@@ -532,6 +532,7 @@ Pellets are implemented similarly to PowerUps only real difference is that when 
 ```
 
 ## Win Condtiion
+If the pellets list is empty or in other words all pellets have been removed from the board then the animation ends and a you won text is displayed on the browser.
 ```
     if(pellets.length==0)
     {
