@@ -202,7 +202,10 @@ function isCollision({circle,rect}){
 }
 ```
 
-## Defining and Creating Maze
+## Maze
+
+### Defining Maze
+
 A array of arrays is used in order to define the Maze such that each subarray in the array corresponds to a row of the gameboard.
 ```
 const map = [
