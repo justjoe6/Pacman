@@ -404,6 +404,9 @@ map.forEach((row,i) => {
 ```
 
 ### Implementing PacMan PowerUps
+
+A list of PowerUp objects is looped through and if the PacMan makes contact with a PowerUp then that PowerUp object is removed from the list of PowerUps and from the board. Also each ghost becomes scared or in other words the color of the ghosts all become blue and the PacMan is able to eat the ghosts removing them from the board.
+
 ```
     for(let i = powerUps.length-1; i>=0;i--)
     {
@@ -426,6 +429,9 @@ map.forEach((row,i) => {
 ```
 
 ### Displaying & Implementing Pellet Mechanics
+
+Pellets are implemented similarly to PowerUps only real difference is that when the PacMan makes contact with them they add 10 points the the users score.
+
 ```
     for(let i = pellets.length-1; i>=0;i--)
     {
