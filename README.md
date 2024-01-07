@@ -1,4 +1,7 @@
+
 # Index.js
+<img width="900" alt="PacmanSS" src="https://github.com/justjoe6/Pacman/assets/68125991/e65b4d27-ed1e-4f2c-94c7-8b2203030c9d">
+
 
 ## Boundary Class
 ```
