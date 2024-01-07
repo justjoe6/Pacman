@@ -457,6 +457,8 @@ Pellets are implemented similarly to PowerUps only real difference is that when 
 ```
 
 ### Ghost Movement & Collision Detection With Boundaries & PacMan
+<img width="919" alt="Screenshot 2024-01-07 121223" src="https://github.com/justjoe6/Pacman/assets/68125991/e0bc3332-4360-4cab-baf7-013902effb11">
+
 
 If a ghost collides with PacMan then the code checks first if the ghost is scared if it is then it is removed from the board and the list of ghosts, however, if it is not scared then the animation is stopped and a GAME OVER text is displayed on the screen. Ghost collision with Boundaries is similar to how it is implemented with PacMan only difference is that we keep track of previous and current collisions by the ghosts. Current collisions are added if they haven't been already to a collisions list then if the length of this list is greater than the previous collsions list then the previous collisions list is set equal to the collisions list. Since the collision list is reset if a ghosts list of previous collisions does not equal the current collisions(Meaning the collsions list is less than a ghosts previous collisions list) this means that a pathway has opened up and thus the code randomly decides whether the ghost takes that pathway or not. In other words from the available pathways the code chooses the direction the ghosts will move randomly based on the previous and current collisions.
 
