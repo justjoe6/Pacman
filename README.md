@@ -546,3 +546,58 @@ If the pellets list is empty or in other words all pellets have been removed fro
         scoreEl.innerHTML='you won'
     }
 ```
+
+# Index.html
+
+## Difficulty Buttons
+
+When a difficulty button is pressed the difficulty() function from index.js is called with the arguments being the difficulty along with the button.
+```
+<button id = "ezBtn" class = "btn pad" onclick = "difficulty('easy',this)">EASY</button>
+<button id = "hrdBtn" class = "btn pad" onclick = "difficulty('hard',this)">HARD</button>
+<button id = "impBtn" class = "btn" onclick = "difficulty('imp',this)">IMPOSSIBLE</button>
+```
+
+The speed of ghosts is set based on the difficulty with a speed of 2 being easy a speed of 2.5 being hard and a speed of 5 being impossible. When the function is called all the difficulty buttons are hidden after the difficulty has been set.
+```
+function difficulty(diff)
+  {
+
+    if(diff == 'easy')
+    {
+        Ghost.speed=2
+    }
+    else if(diff == 'hard')
+    {
+        Ghost.speed=2.5
+    }
+    else if(diff == 'imp')
+    {
+        Ghost.speed=5
+    }
+    else
+    {
+        Ghost.speed=2
+    }
+    document.getElementById("ezBtn").style.display='none' 
+    document.getElementById("hrdBtn").style.display='none' 
+    document.getElementById("impBtn").style.display='none' 
+  }
+```
+
+## Start Button
+
+Start button calls the function start from index.js with the button as an argument.
+```
+<button class = "btn" onclick = "start(this)">START</button>
+```
+Here we set the display of all buttons on the browser to none such that they are no longer visible when the start button is pressed and then call the animate function to start the game. If the start button is pressed before any of the difficulty buttons then the default difficulty is easy.
+```
+function start(btn){
+    btn.style.display='none'
+    document.getElementById("ezBtn").style.display='none' 
+    document.getElementById("hrdBtn").style.display='none' 
+    document.getElementById("impBtn").style.display='none' 
+    animate()
+}
+```
