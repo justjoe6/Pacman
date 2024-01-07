@@ -410,6 +410,8 @@ Here I have provided an example of how collision detection between PacMan and th
 ```
 
 ### Implementing PacMan PowerUps
+<img width="917" alt="Screenshot 2024-01-07 121041" src="https://github.com/justjoe6/Pacman/assets/68125991/1834fe37-8ced-4773-8d99-5980b5b78c1d">
+
 
 A list of PowerUp objects is looped through and if the PacMan makes contact with a PowerUp then that PowerUp object is removed from the list of PowerUps and from the board. Also each ghost becomes scared or in other words the color of the ghosts all become blue and the PacMan is able to eat the ghosts removing them from the board.
 
