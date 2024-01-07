@@ -383,6 +383,9 @@ map.forEach((row,i) => {
 ## Animation Function
 
 ### PacMan Movement & Boundary Collision Detection
+
+Here I have provided an example of how collision detection between PacMan and the boundaries is implemented along with PacMan using the W key or Upward motino as an example. If the PacMan will not collide with any boundaries then its velocity in the y direction is set to -5 thus moving it upwards on the screen. Otherwise, if a collision is detected then the velocity of the PacMan is set to 0 in that direction thus preventing it from passing any boundaries.
+
 ```
     if(keys.w.pressed && lastKey =='w')
     {
@@ -449,6 +452,9 @@ Pellets are implemented similarly to PowerUps only real difference is that when 
 ```
 
 ### Ghost Movement & Collision Detection With Boundaries & PacMan
+
+If a ghost collides with PacMan then the code checks first if the ghost is scared if it is then it is removed from the board and the list of ghosts, however, if it is not scared then the animation is stopped and a GAME OVER text is displayed on the screen. Ghost collision with Boundaries is similar to how it is implemented with PacMan only difference is that we keep track of previous and current collisions by the ghosts. Current collisions are added if they haven't been already to a collisions list then if the length of this list is greater than the previous collsions list then the previous collisions list is set equal to the collisions list. Since the collision list is reset if a ghosts list of previous collisions does not equal the current collisions(Meaning the collsions list is less than a ghosts previous collisions list) this means that a pathway has opened up and thus the code randomly decides whether the ghost takes that pathway or not. In other words from the available pathways the code chooses the direction the ghosts will move randomly based on the previous and current collisions.
+
 ```
  ghosts.forEach((ghost,i) => {
         ghost.update()
